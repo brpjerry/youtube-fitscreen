@@ -1,0 +1,12 @@
+__pycache__/
+.pytest_cache/
+artifacts/*
+!artifacts/.gitkeep
+dist/
+store/
+PUBLISHING.md
+AGENTS.md
+AGENTS.local.md
+.agents/
+.codex/
+.aws/
