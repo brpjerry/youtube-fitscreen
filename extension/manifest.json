@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Fit Screen",
+  "author": "brpjerry",
+  "version": "0.1.0",
+  "description": "Toggle a centered, unstretched crop that fills your screen in YouTube fullscreen.",
+  "icons": {
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "64": "icons/icon-64.png",
+    "96": "icons/icon-96.png",
+    "128": "icons/icon-128.png"
+  },
+  "permissions": ["storage"],
+  "host_permissions": [
+    "https://www.youtube.com/*",
+    "https://www.youtube-nocookie.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.youtube.com/*",
+        "https://www.youtube-nocookie.com/*"
+      ],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "all_frames": true,
+      "run_at": "document_idle"
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{b592b1fa-7df4-40df-8089-d248ab55b9ea}",
+      "strict_min_version": "140.0",
+      "data_collection_permissions": {"required": ["none"]}
+    }
+  }
+}

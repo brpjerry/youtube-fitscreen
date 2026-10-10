@@ -1,0 +1,54 @@
+/* The button belongs to YouTube's controls, including their auto-hide behavior. */
+.html5-video-player .ytf-button {
+  display: none !important;
+}
+
+.html5-video-player.ytf-fullscreen .ytf-button {
+  display: inline-block !important;
+}
+
+.html5-video-player .ytf-button svg {
+  display: block !important;
+  box-sizing: border-box;
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.ytf-button[aria-pressed="true"] .ytf-icon-square {
+  fill: #fff;
+}
+
+.ytf-button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: -4px;
+}
+
+/* Override YouTube's inline letterbox dimensions only during video fullscreen.
+   Removing our classes restores the site's current styles without stale copies.
+   Only the video is cropped; captions and controls keep their normal layout. */
+.html5-video-player.ytf-fullscreen.ytf-crop .html5-video-container {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.html5-video-player.ytf-fullscreen.ytf-crop video.html5-main-video {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  margin: 0 !important;
+  transform: none !important;
+  object-fit: cover !important;
+  object-position: center !important;
+}
